@@ -1,17 +1,26 @@
 <!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>button clicker</title>
+    <title>Кликер</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>button clicker</h1>
-        <p id="score">счет: 0</p>
-        <p id="multiplier">Умножитель: 1</p>
-        <button id="clickButton">Кликни меня!</button>
-        <button id="upgradeButton">Улучшить (Цена: 10)</button>
+    <div id="game">
+        <h1>Кликер</h1>
+        <div id="coin">Coin: 0</div>
+        <button id="clickButton" class="round-button">Клик!</button>
+        
+        <h2>Магазин улучшений</h2>
+        <div id="upgrades">
+            <div>
+                <button id="upgradeButton">Улучшить (Цена: 10)</button>
+            </div>
+            <div>
+                <button id="doubleUpgradeButton">Удвоить умножитель (Цена: 50)</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
