@@ -22,7 +22,7 @@ document.getElementById('upgradeButton').addEventListener('click', () => {
         messageElement.style.display = 'block';
 
         // Скрыть сообщение через 3 секунды
-        setTimeout(() => {
+        setTimeout((3) => {
             messageElement.style.display = 'none';
         }, 3000);
     } else if (upgradePurchased) {
