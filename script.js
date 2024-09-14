@@ -18,7 +18,7 @@ document.getElementById('upgradeButton').addEventListener('click', () => {
         upgradePurchased = true;
 
         // Отобразить сообщение
-        messageElement.textContent = 'Улучшение успешно куплено!';
+        messageElement.textContent = 'Куплено!';
         messageElement.style.display = 'block';
 
         // Скрыть сообщение через 3 секунды
