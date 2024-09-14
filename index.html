@@ -7,20 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game">
-        <h1>Кликер</h1>
-        <div id="coin">Coin: 0</div>
-        <button id="clickButton" class="round-button">Клик!</button>
-        
+
+    <div class="coin-count">Монеты: <span id="coinCount">0</span></div>
+    <button class="click-button" id="clickButton">Клик!</button>
+
+    <div class="shop">
         <h2>Магазин улучшений</h2>
-        <div id="upgrades">
-            <div>
-                <button id="upgradeButton">Улучшить (Цена: 10)</button>
-            </div>
-            <div>
-                <button id="doubleUpgradeButton">Удвоить умножитель (Цена: 50)</button>
-            </div>
-        </div>
+        <button class="upgrade-button" id="upgradeButton">Улучшение (Цена: <span class="upgrade-cost" id="upgradeCost">10</span> монет)</button>
     </div>
 
     <script src="script.js"></script>
