@@ -1,20 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* Общие стили для кнопок */
+.button {
+    background-color: #4CAF50; /* Зеленый фон */
+    border: none; /* Без рамки */
+    color: white; /* Белый текст */
+    padding: 15px 32px; /* Отступы */
+    text-align: center; /* Центрирование текста */
+    text-decoration: none; /* Без подчеркивания */
+    display: inline-block; /* Встроенный блок */
+    font-size: 16px; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы между кнопками */
+    cursor: pointer; /* Указатель при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
 }
 
-.round-button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
+/* Эффект при наведении */
+.button:hover {
+    background-color: #45a049; /* Более темный зеленый при наведении */
+    transform: scale(1.05); /* Увеличение размера */
 }
 
-#upgrades {
-    margin-top: 20px;
-}
-
-button {
-    margin: 5px;
+/* Эффект при нажатии */
+.button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
 }
