@@ -1,54 +1,29 @@
-
-let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
-let multiplier = localStorage.getItem('multiplier') ? parseInt(localStorage.getItem('multiplier')) : 1;
+let coins = 0;
 let upgradeCost = 10;
-let doubleUpgradeCost = 50;
 
-document.getElementById('coin').innerText = 'Coin: ' + score;
+const coinCountElement = document.getElementById('coinCount');
+const clickButton = document.getElementById('clickButton');
+const upgradeButton = document.getElementById('upgradeButton');
+const upgradeCostElement = document.getElementById('upgradeCost');
 
-document.getElementById('clickButton').addEventListener('click', function() {
-    score += multiplier;
-    document.getElementById('coin').innerText = 'Coin: ' + score;
-    localStorage.setItem('score', score);
+clickButton.addEventListener('click', () => {
+    coins++;
+    coinCountElement.textContent = coins;
 });
 
-document.getElementById('upgradeButton').addEventListener('click', function() {
-    if (score >= upgradeCost) {
-        score -= upgradeCost;
-        multiplier++;
-        upgradeCost = Math.floor(upgradeCost * 1.5);
-        document.getElementById('coin').innerText = 'Coin: ' + score;
-        this.innerText = 'Улучшить (Цена: ' + upgradeCost + ')';
-        localStorage.setItem('score', score);
-        localStorage.setItem('multiplier', multiplier);
-        localStorage.setItem('upgradeCost', upgradeCost);
+upgradeButton.addEventListener('click', () => {
+    if (coins >= upgradeCost) {
+        coins -= upgradeCost;
+        coinCountElement.textContent = coins;
+
+        // Увеличиваем стоимость следующего улучшения
+        upgradeCost = Math.floor(upgradeCost * 1);
+        upgradeCostElement.textContent = upgradeCost;
+
+        // Можно добавить эффект улучшения (например, увеличение количества монет за клик)
+        alert("Улучшение куплено!");
     } else {
-        alert('Недостаточно монет для улучшения!');
+        alert("Недостаточно монет!");
     }
 });
 
-document.getElementById('doubleUpgradeButton').addEventListener('click', function() {
-    if (score >= doubleUpgradeCost) {
-        score -= doubleUpgradeCost;
-        multiplier *= 2; // Удваиваем умножитель
-        doubleUpgradeCost = Math.floor(doubleUpgradeCost * 1.5); // Увеличиваем стоимость
-        document.getElementById('coin').innerText = 'Coin: ' + score;
-        this.innerText = 'Удвоить умножитель (Цена: ' + doubleUpgradeCost + ')';
-        localStorage.setItem('score', score);
-        localStorage.setItem('multiplier', multiplier);
-        localStorage.setItem('doubleUpgradeCost', doubleUpgradeCost);
-    } else {
-        alert('Недостаточно монет для удвоения умножителя!');
-    }
-});
-
-// Восстанавливаем значения из localStorage
-if (localStorage.getItem('upgradeCost')) {
-    upgradeCost = parseInt(localStorage.getItem('upgradeCost'));
-    document.getElementById('upgradeButton').innerText = 'Улучшить (Цена: ' + upgradeCost + ')';
-}
-
-if (localStorage.getItem('doubleUpgradeCost')) {
-    doubleUpgradeCost = parseInt(localStorage.getItem('doubleUpgradeCost'));
-    document.getElementById('doubleUpgradeButton').innerText = 'Удвоить умножитель (Цена: ' + doubleUpgradeCost + ')';
-}
