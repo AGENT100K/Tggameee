@@ -24,7 +24,7 @@ document.getElementById('upgradeButton').addEventListener('click', function() {
         localStorage.setItem('multiplier', multiplier); // Сохраняем обновленный умножитель
         localStorage.setItem('upgradeCost', upgradeCost); // Сохраняем обновленную стоимость улучшения
     } else {
-        alert('Недостаточно очков для улучшения!');
+        alert('Недостаточно button coin для улучшения!');
     }
 });
 
