@@ -17,7 +17,7 @@ upgradeButton.addEventListener('click', () => {
         coinCountElement.textContent = coins;
 
         // Увеличиваем стоимость следующего улучшения
-        upgradeCost = Math.floor(upgradeCost * 1);
+        upgradeCost = Math.floor(upgradeCost * 1.5);
         upgradeCostElement.textContent = upgradeCost;
 
         // Можно добавить эффект улучшения (например, увеличение количества монет за клик)
